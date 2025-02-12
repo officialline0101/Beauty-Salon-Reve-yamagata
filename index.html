@@ -330,32 +330,30 @@
 
         .info-text {
             margin-top: 20px;
-            /* 上の余白 */
-            margin-bottom: 10px;
-            /* 下に白い隙間を追加 */
+            /* 下にずらすスペース */
             font-size: 13px;
+            /* 読みやすいサイズ */
             color: #000000;
+            /* 説明文らしい落ち着いた色 */
             line-height: 1.5;
+            /* テキスト間の高さを適切に設定 */
             text-align: center;
+            /* 中央揃え */
             word-wrap: break-word;
-            background-color: #eef9f5;
-            /* 青っぽい背景色を追加 */
-            padding: 10px;
-            border-radius: 4px;
+            /* 長いテキストの折り返しを強制 */
         }
 
         /* 携帯端末向けのレスポンシブデザイン */
         @media (max-width: 768px) {
             .info-text {
-                font-size: 11.5px;
+                font-size: 10px;
                 /* スマホでは少し小さく */
-                margin-top: 10px;
+                margin-top: 15px;
                 /* 上下のマージンを調整 */
-                line-height: 2.0;
+                line-height: 1.4;
                 /* テキストの高さ調整 */
             }
         }
-
         .symptoms,
         .irradiations,
         .options {
@@ -420,7 +418,7 @@
 
 <body>
     <div class="container">
-        <h1>Beauty Salon Reve<br>予約フォーム<br>指名：諸橋　里美</h1>
+        <h1>Beauty Salon Reve<br>予約フォーム<br>指名：山形　容子</h1>
         <div class="label">お客様名※必須</div>
         <input type="text" id="name" placeholder="お名前を入力してください">
 
@@ -443,7 +441,7 @@
 
         <div id="male" class="menu-section">
             <div class="highlight-background">
-                <span class="highlight-text">◆男性脱毛◆</span>
+                <span class="highlight-text">◆ブライダルコース◆</span>
             </div>
             <div class="symptoms">
                 <button type="button" onclick="selectSymptom(this)" data-price="15000">カウンセリング</button>
@@ -561,7 +559,7 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             liff.init({
-                liffId: '2006846260-4v7ywAL7'
+                liffId: '2006846123-X21jrRDj'
             }).then(() => {
                 console.log('LIFF初期化成功');
             }).catch((err) => {
@@ -602,7 +600,7 @@
             'お顔コース': 60,
             'ＶＩＯコース': 60,
             'お好きなパーツ': 60,
-            '新規限定　アドバンスコー': 120,
+            '新規限定　アドバンスコース': 120,
             '二回目以降　キープメンバーコース': 120,
             '二回目以降　ビジターコース': 120,
             '二回目以降　美肌レッスン': 60
@@ -919,7 +917,7 @@
             // LINEトークにメッセージを送信
             liff.sendMessages([{
                 type: 'text',
-                text: `【予約フォーム】\n指名：諸橋里美\nお名前：${formData.name}\n電話番号：${formData.phone}\nご性別：${formData.visitCount}\nメニュー：${formData.selectedSymptom},${formData.irradiationsCount}\n希望日時：\n ${formData.dates[0]}\nメッセージ：${formData.message}`
+                text: `【予約フォーム】\n指名：山形　容子\nお名前：${formData.name}\n電話番号：${formData.phone}\nご性別：${formData.visitCount}\nメニュー：${formData.selectedSymptom},${formData.irradiationsCount}\n希望日時：\n ${formData.dates[0]}\nメッセージ：${formData.message}`
             }]).then(() => {
                 /* メッセージ送信成功時の処理 */
                 alert('当日キャンセルは無いようにお願いいたします。');
@@ -951,7 +949,7 @@
                 return;
             }
 
-            const url = 'https://script.google.com/macros/s/AKfycbwR3KX3SG9kMkmjJvrFuRE-giVLQgxGkjnDPB4vCoCncV7Zy0KTkMoOkt2c_pPxfNh1/exec' +
+            const url = 'https://script.google.com/macros/s/AKfycbx9iqWDyVxxfRtp6Mx4KUjLsMZSzAfsAsVUn8sgiPr3jHGwIGWSuVOeqFIlVQM5kqoj4g/exec' +
                 `?startTime=${startTime.toISOString()}&endTime=${endTime.toISOString()}`;
 
             try {
