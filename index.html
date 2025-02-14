@@ -441,19 +441,21 @@
             <button type="button" onclick="showMenu('whitening')">女性脱毛</button>
         </div>
 
+        <div id="treatment-text" style="margin-bottom: 20px;"></div>
+
         <div id="male" class="menu-section">
             <div class="highlight-background">
                 <span class="highlight-text">◆男性脱毛◆</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">カウンセリング</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">全身脱毛/VIO込み</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">全身脱毛/VIO抜きの全身</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">上半身コース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">下半身コース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">お顔コース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">ＶＩＯコース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">お好きなパーツ</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment1')" data-price="15000">カウンセリング</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment2')" data-price="15000">全身脱毛/VIO込み</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment3')" data-price="15000">全身脱毛/VIO抜きの全身</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment4')" data-price="15000">上半身コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment5')" data-price="15000">下半身コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment6')" data-price="15000">お顔コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment7')" data-price="15000">ＶＩＯコース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment8')" data-price="15000">お好きなパーツ</button>
             </div>
         </div>
 
@@ -462,10 +464,10 @@
                 <span class="highlight-text">◆フェイシャル◆</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">新規限定　アドバンスコース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">二回目以降　キープメンバーコース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">二回目以降　ビジターコース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">二回目以降　美肌レッスン</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment9')" data-price="15000">新規限定　アドバンスコース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment10')" data-price="15000">二回目以降　キープメンバーコース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment11')" data-price="15000">二回目以降　ビジターコース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment12')" data-price="15000">二回目以降　美肌レッスン</button>
             </div>
             <div class="highlight-background">
                 <span class="highlight-text">フェイシャル：オプション<br>※いくつでもご選択いただけます。</span>
@@ -495,14 +497,14 @@
                 <span class="highlight-text">◆女性脱毛◆</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">カウンセリング</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">全身脱毛/VIO込み</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">全身脱毛/VIO抜きの全身</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">上半身コース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">下半身コース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">お顔コース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">ＶＩＯコース</button>
-                <button type="button" onclick="selectSymptom(this)" data-price="15000">お好きなパーツ</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment13')" data-price="15000">カウンセリング</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment14')" data-price="15000">全身脱毛/VIO込み</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment15')" data-price="15000">全身脱毛/VIO抜きの全身</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment16')" data-price="15000">上半身コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment17')" data-price="15000">下半身コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment18')" data-price="15000">お顔コース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment19')" data-price="15000">ＶＩＯコース</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment20')" data-price="15000">お好きなパーツ</button>
             </div>
         </div>
 
@@ -731,23 +733,45 @@
             const treatmentText = document.getElementById('treatment-text');
 
             if (treatmentId === 'treatment1') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：6,500円<br>初診料：＋2,200円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;">脱毛についての質問や、施術部位・料金についてなどお気軽にご相談ください。</div><div style="text-align: right;"><strong>料金：￥0円</strong></div>`;
             } else if (treatmentId === 'treatment2') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：4,500円<br>初診料：＋2,200円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;">お顔・手足の甲・指含む</div><div style="text-align: right;"><strong>成人：￥16,900円<br>学生：￥12,100円`;
             } else if (treatmentId === 'treatment3') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：120分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：8,700円<br>初診料：＋2,200円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;">お顔・手足の甲・指含む</div><div style="text-align: right;"><strong>成人：￥15,400円<br>学生：￥11,000円`;
             } else if (treatmentId === 'treatment4') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：30分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：1,700円<br>初診料：＋2,200円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;">首より下～ウエストライン（手の甲・指含む）</div><div style="text-align: right;"><strong>成人：￥7,700円<br>学生：￥5,500円`;
             } else if (treatmentId === 'treatment5') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：6,500円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;">太ももより下（足の甲・指含む）</div><div style="text-align: right;"><strong>成人：￥6,160円<br>学生：￥4,400円`;
             } else if (treatmentId === 'treatment6') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：30分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：4,500円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;">フェイスライン～目の下まで</div><div style="text-align: right;"><strong>成人：￥3,850円<br>学生：￥2,750円`;
             } else if (treatmentId === 'treatment7') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：8,700円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;">脱毛についての質問や、施術部位・料金についてなどお気軽にご相談ください。</div><div style="text-align: right;"><strong>成人：￥3,850円<br>学生：￥2,750円`;
             } else if (treatmentId === 'treatment8') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：15分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：1,700円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;">脱毛についての質問や、施術部位・料金についてなどお気軽にご相談ください。<br>（1パーツごとに料金とお時間が加算されます。）</div><div style="text-align: right;"><strong>成人：￥2,300円<br>学生：￥1,650円`;
             } else if (treatmentId === 'treatment9') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：15分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：1,700円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;">イルネージュアドバンスコース（60分）<br>8,800円（税込）⇨3,300円（税込）でお試しいただけます！<br>滞在時間（目安）：120分<br>（初回カウンセリング、施術後のメイクサービス、お着替え・清掃等）</div><div style="text-align: right;"><strong>料金：￥3,300円`;
+            } else if (treatmentId === 'treatment10') {
+                treatmentText.innerHTML = `<div style="text-align: left;">サロンで使用する化粧品（クレンジング・マッサージ・ロージョン）を<br>ご購入いただきキープメンバーになると、アドバンスコース（60分）を<br>施術料毎回3,300円（税込）で受けることができます。<br>滞在時間（目安）　：100分<br>（施術後のメイクサービス・お着替え・清算等）</div><div style="text-align: right;"><strong>料金：￥3,300円`;
+            } else if (treatmentId === 'treatment11') {
+                treatmentText.innerHTML = `<div style="text-align: left;">エンベリエコース：12,100円（税込）<br>イルネージュコース：8,800円（税込）<br>リシアルコース：6,600円（税込）<br>TKコース：5,500円（税込）<br>※お好きなコースをお選びください。<br>当日サロンにてお伺いいたします。<br>滞在時間（目安）：100分<br>（施術後にメイクサービス・お着替え・清算等）</div><div style="text-align: right;"><strong>料金：￥5,500円～￥12,100円`;
+            } else if (treatmentId === 'treatment12') {
+                treatmentText.innerHTML = `<div style="text-align: left;">ＣＭでもおなじみのイルネージュを使用して、<br>クレンジングの加減やウォッシングの泡立てのコツなど<br>ホームケアの見直しやレッスンを行います。<br>毎日のお手入れ方法が変わるとお肌のキメやトーン<br>も変わりますよ！！<br>滞在時間（目安）：60分</div><div style="text-align: right;"><strong>料金：￥0円`;
+            } else if (treatmentId === 'treatment13') {
+                treatmentText.innerHTML = `<div style="text-align: left;">脱毛についての質問や、施術部位・料金についてなどお気軽にご相談ください。</div><div style="text-align: right;"><strong>料金：￥0円</strong></div>`;
+            } else if (treatmentId === 'treatment14') {
+                treatmentText.innerHTML = `<div style="text-align: left;">お顔・手足の甲・指含む</div><div style="text-align: right;"><strong>成人：￥13,860円<br>学生：￥9,900円`;
+            } else if (treatmentId === 'treatment15') {
+                treatmentText.innerHTML = `<div style="text-align: left;">お顔・手足の甲・指含む</div><div style="text-align: right;"><strong>成人：￥12,320円<br>学生：￥8,800円`;
+            } else if (treatmentId === 'treatment16') {
+                treatmentText.innerHTML = `<div style="text-align: left;">首より下～ウエストライン（手の甲・指含む）</div><div style="text-align: right;"><strong>成人：￥6,160円<br>学生：￥4,400円`;
+            } else if (treatmentId === 'treatment17') {
+                treatmentText.innerHTML = `<div style="text-align: left;">太ももより下（足の甲・指含む）</div><div style="text-align: right;"><strong>成人：￥4,620円<br>学生：￥3,300円`;
+            } else if (treatmentId === 'treatment18') {
+                treatmentText.innerHTML = `<div style="text-align: left;">フェイスライン～目の下まで</div><div style="text-align: right;"><strong>成人：￥3,080円<br>学生：￥2,200円`;
+            } else if (treatmentId === 'treatment19') {
+                treatmentText.innerHTML = `<div style="text-align: left;">脱毛についての質問や、施術部位・料金についてなどお気軽にご相談ください。</div><div style="text-align: right;"><strong>成人：￥3,080円<br>学生：￥2,200円`;
+            } else if (treatmentId === 'treatment20') {
+                treatmentText.innerHTML = `<div style="text-align: left;">脱毛についての質問や、施術部位・料金についてなどお気軽にご相談ください。<br>（1パーツごとに料金とお時間が加算されます。）</div><div style="text-align: right;"><strong>成人：￥1,540円<br>学生：￥1,100円`;
             } else {
                 treatmentText.innerHTML = '';
             }
