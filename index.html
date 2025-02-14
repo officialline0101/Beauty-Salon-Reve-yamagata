@@ -1063,13 +1063,16 @@
                         continue;
                     }
 
-                    // ここで終了時間を使った条件処理を行う
-                    // 例えば、リアルタイムで既に過ぎた時間帯は×にする
-                    if (slotStart < now) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                        continue;
-                    }
+// 24時間後の時刻を計算
+const nowPlus24Hours = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+
+// ここで終了時間を使った条件処理を行う
+// 例えば、リアルタイムで既に過ぎた時間帯は×にする
+if (slotStart < nowPlus24Hours) {
+    cell.textContent = '✕';
+    cell.classList.add('unavailable');
+    continue;
+}
 
                     const isBusinessDay = businessDays.some(businessDay => {
                         const businessDayStart = new Date(businessDay.start);
